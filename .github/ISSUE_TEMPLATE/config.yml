@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞报告（私密）
+    url: https://github.com/deslopkit/deslopkit/security/advisories/new
+    about: 请勿公开提交安全问题，改用私密漏洞报告。
+  - name: 贡献指南 / 提问前请先阅读
+    url: https://github.com/deslopkit/deslopkit/blob/main/CONTRIBUTING.md
+    about: 新增规则、语域与提交规范见 CONTRIBUTING.md。

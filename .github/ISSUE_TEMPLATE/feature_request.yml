@@ -1,0 +1,49 @@
+name: Feature request
+description: 提议新功能、新规则或新语域
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢建议！deslopkit 的目标是**降低模板化表达与机器痕迹**，并保持
+        **可复算、可审计、保真可验证**。提案若属于「绕过第三方检测」类诉求，
+        将不被接受。
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 需求场景
+      description: 你希望在什么场景下用它？为什么现有功能不够？
+      placeholder: 例如：处理中文公文时，希望识别 XX 类模板化套话。
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议的规则 / 语域
+      description: >-
+        如果建议新增规则，请描述要匹配的表达、所属语言与语域、以及期望的
+        severity；如果建议新增语域，请描述该语域的特征与适用文本。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: has-sample
+    attributes:
+      label: 是否有真实文本样例（可脱敏）
+      options:
+        - 有，可在下方提供
+        - 没有，只有描述
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample
+    attributes:
+      label: 文本样例（可选，请脱敏）
+      description: 若上面选择「有」，请贴出脱敏后的样例，并说明期望的处理方向。
+      render: text
+    validations:
+      required: false

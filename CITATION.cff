@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use deslopkit in your research or project, please cite it as below."
+title: "deslopkit: A register-aware, fidelity-guarded bilingual de-AI-slop toolkit"
+abstract: >-
+  deslopkit is a register-aware, fidelity-guarded bilingual (Chinese/English)
+  toolkit for reducing templated, machine-like phrasing in text. It ships a
+  deterministic rule engine (no LLM required), a Fidelity Guard that verifies
+  numbers, proper nouns and quotations are preserved verbatim, register profiles
+  for Chinese official/academic/forum and English academic/essay text,
+  reproducible metrics with baseline comparison reports, and a CLI plus Agent
+  Skill entry point. It does not warrant the output of any third-party detector.
+type: software
+version: "0.1.0"
+date-released: "2026-10-06"
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+repository-code: "https://github.com/grantleyzyf-spec/deslopkit"
+keywords:
+  - text
+  - nlp
+  - chinese
+  - english
+  - de-ai-slop
+  - register
+  - fidelity
+  - cli
+authors:
+  - family-names: "grantleyzyf-spec"
+    website: "https://github.com/grantleyzyf-spec"
+    email: "3571592052@qq.com"
