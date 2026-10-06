@@ -1,0 +1,327 @@
+[{
+  "kind": "rewrite",
+  "register": "zh-gov",
+  "passes_run": 2,
+  "gate": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "保真护栏",
+        "passed": true,
+        "detail": "保真通过：22 个受保护片段逐字保留"
+      },
+      {
+        "name": "闸门类别 negation_pivot 清零",
+        "passed": true,
+        "detail": "剩余 0 处"
+      },
+      {
+        "name": "句长CV 不下降",
+        "passed": true,
+        "detail": "样本过小（12 句 / 5 段），CV 门禁不适用"
+      },
+      {
+        "name": "段长CV 不下降",
+        "passed": true,
+        "detail": "样本过小（12 句 / 5 段），CV 门禁不适用"
+      },
+      {
+        "name": "字数变动 ≤10%",
+        "passed": true,
+        "detail": "357 → 343（3.9%）"
+      },
+      {
+        "name": "无新增重复句",
+        "passed": true,
+        "detail": "0 → 0"
+      }
+    ]
+  },
+  "fidelity": {
+    "ok": true,
+    "kept": 22,
+    "missing": [],
+    "added": [],
+    "detail": ""
+  },
+  "metrics_before": {
+    "han": 357,
+    "chars_no_space": 521,
+    "latin_words": 7,
+    "sentences": 12,
+    "sent_mean": 29.75,
+    "sent_std": 14.03,
+    "sent_cv": 0.471,
+    "sent_min": 16,
+    "sent_max": 60,
+    "short_sentences": 0,
+    "short_sentence_ratio": 0.0,
+    "paragraphs": 5,
+    "para_mean": 71.4,
+    "para_median": 93,
+    "para_std": 34.29,
+    "para_cv": 0.48,
+    "para_min": 20,
+    "para_max": 98,
+    "ngram4_repeat": 0.0328,
+    "ngram4_hot": [
+      [
+        "教师教育",
+        3
+      ],
+      [
+        ".01）",
+        2
+      ],
+      [
+        "0.01",
+        2
+      ],
+      [
+        "2026",
+        2
+      ],
+      [
+        "<0.0",
+        2
+      ],
+      [
+        "=0.9",
+        2
+      ],
+      [
+        "p<0.",
+        2
+      ],
+      [
+        "—202",
+        2
+      ],
+      [
+        "人工智能",
+        2
+      ],
+      [
+        "师教育的",
+        2
+      ]
+    ],
+    "repeated_sentences": [],
+    "long_attributive": 0,
+    "punctuation": {
+      "dash_rhetoric": 0,
+      "dash_connector": 5,
+      "dash_halfwidth": 0,
+      "colon_zh": 2,
+      "colon_half": 0,
+      "colon_prompt": 2,
+      "quote_zh": 2,
+      "quote_half": 0,
+      "semicolon_zh": 2
+    }
+  },
+  "metrics_after": {
+    "han": 343,
+    "chars_no_space": 505,
+    "latin_words": 7,
+    "sentences": 12,
+    "sent_mean": 28.58,
+    "sent_std": 14.02,
+    "sent_cv": 0.491,
+    "sent_min": 14,
+    "sent_max": 58,
+    "short_sentences": 0,
+    "short_sentence_ratio": 0.0,
+    "paragraphs": 5,
+    "para_mean": 68.6,
+    "para_median": 88,
+    "para_std": 31.89,
+    "para_cv": 0.465,
+    "para_min": 20,
+    "para_max": 93,
+    "ngram4_repeat": 0.0339,
+    "ngram4_hot": [
+      [
+        "教师教育",
+        3
+      ],
+      [
+        ".01）",
+        2
+      ],
+      [
+        "0.01",
+        2
+      ],
+      [
+        "2026",
+        2
+      ],
+      [
+        "<0.0",
+        2
+      ],
+      [
+        "=0.9",
+        2
+      ],
+      [
+        "p<0.",
+        2
+      ],
+      [
+        "—202",
+        2
+      ],
+      [
+        "人工智能",
+        2
+      ],
+      [
+        "力教师教",
+        2
+      ]
+    ],
+    "repeated_sentences": [],
+    "long_attributive": 0,
+    "punctuation": {
+      "dash_rhetoric": 0,
+      "dash_connector": 5,
+      "dash_halfwidth": 0,
+      "colon_zh": 1,
+      "colon_half": 0,
+      "colon_prompt": 1,
+      "quote_zh": 2,
+      "quote_half": 0,
+      "semicolon_zh": 2
+    }
+  },
+  "applied": [
+    {
+      "rule_id": "zh.nom.002",
+      "category": "nominalization",
+      "strategy": "nominal",
+      "before": "具有统计学意义",
+      "after": "差异在统计上显著",
+      "line": 7,
+      "needs_review": false,
+      "note": "直接写“差异显著”，并给出统计量。"
+    },
+    {
+      "rule_id": "zh.nom.001",
+      "category": "nominalization",
+      "strategy": "nominal",
+      "before": "具有一定的参考价值",
+      "after": "有参考价值",
+      "line": 7,
+      "needs_review": false,
+      "note": "直接写“有参考价值”，或更实：写清对谁、在哪方面有用。"
+    },
+    {
+      "rule_id": "zh.neg.005",
+      "category": "filler",
+      "strategy": "delete",
+      "before": "说到底",
+      "after": "",
+      "line": 5,
+      "needs_review": false,
+      "note": "删掉路标，直接写事实或判断。"
+    },
+    {
+      "rule_id": "zh.jar.005",
+      "category": "jargon",
+      "strategy": "replace",
+      "before": "深度融合",
+      "after": "融合",
+      "line": 5,
+      "needs_review": false,
+      "note": "写清融合在哪个环节（课程/教研/评价）。"
+    },
+    {
+      "rule_id": "zh.fil.005",
+      "category": "filler",
+      "strategy": "delete",
+      "before": "值得注意的是：",
+      "after": "",
+      "line": 3,
+      "needs_review": false,
+      "note": "删除后把真正想说的那句直接写出来。"
+    },
+    {
+      "rule_id": "zh.neg.001",
+      "category": "negation_pivot",
+      "strategy": "neg_pivot",
+      "before": "不是单纯的技术问题，而是技术、教学、评价与治理交织的系统问题",
+      "after": "是技术、教学、评价与治理交织的系统问题，而不是单纯的技术问题",
+      "line": 3,
+      "needs_review": true,
+      "note": "改成正面陈述，把对比降为句末补充（“……，而不是……”），或直接删掉否定分句。"
+    },
+    {
+      "rule_id": "zh.jar.001",
+      "category": "jargon",
+      "strategy": "replace",
+      "before": "赋能",
+      "after": "助力",
+      "line": 3,
+      "needs_review": false,
+      "note": "换成具体动词（助力/支撑/推动），并补出具体动作或作用点。"
+    },
+    {
+      "rule_id": "zh.jar.001",
+      "category": "jargon",
+      "strategy": "replace",
+      "before": "赋能",
+      "after": "助力",
+      "line": 1,
+      "needs_review": false,
+      "note": "换成具体动词（助力/支撑/推动），并补出具体动作或作用点。"
+    }
+  ],
+  "rejected": [],
+  "skipped_review": 6,
+  "kept_review_hits": [
+    {
+      "id": "zh.fil.003",
+      "category": "filler",
+      "severity": "low",
+      "action": "review",
+      "strategy": "filler",
+      "match": "在当今",
+      "line": 3,
+      "message": "万能开头背景句。",
+      "fix_hint": "换成有具体时间、地点、政策文号的背景。"
+    },
+    {
+      "id": "zh.sig.001",
+      "category": "signposting",
+      "severity": "medium",
+      "action": "review",
+      "strategy": "signpost",
+      "match": "其一是",
+      "line": 5,
+      "message": "分点路标“其一是…其二是…”。",
+      "fix_hint": "改为实词领起（如“在要素层面…”“从过程看…”），或把分点并入陈述句。"
+    },
+    {
+      "id": "zh.sig.001",
+      "category": "signposting",
+      "severity": "medium",
+      "action": "review",
+      "strategy": "signpost",
+      "match": "其二是",
+      "line": 5,
+      "message": "分点路标“其一是…其二是…”。",
+      "fix_hint": "改为实词领起（如“在要素层面…”“从过程看…”），或把分点并入陈述句。"
+    }
+  ],
+  "text": "# 人工智能助力教师教育高质量发展的路径探析\n\n在当今社会，人工智能正在深刻助力教师教育的各个环节。教师教育的发展是技术、教学、评价与治理交织的系统问题，而不是单纯的技术问题。传统的培训模式已经难以满足需求，教师智能素养的提升显得尤为重要。\n\n我们认为，教师专业发展的关键在于两个方面的协同：其一是要素层面，课程与资源需要融合；其二是过程层面，需要构建人机协同的教学闭环。没有素养的支撑，再好的工具也难以发挥作用。综上所述，构建四维机理模型势在必行。\n\n研究采用问卷调查法，有参考价值。调查覆盖 38 个区县与 20 所高校，发放问卷 12 600 份，回收有效 11 428 份，有效率 90.7%；量表 Cronbach's α = 0.932，KMO = 0.918。教师智能素养总体均分为 3.42，区域差异显著（F=23.6，p<0.01）。相关分析显示，教师数智素养与其教学创新行为显著正相关（r=0.62，p<0.01），差异在统计上显著。\n\n研究周期为 2026.10—2029.09，按“理论建构—事实调查—机理检验—进路生成”推进，参照《教师数字素养》标准（T 0646—2022）设计工具，报告文号为渝教规办〔2026〕4 号，引用文献[1,2]。",
+  "keep": [],
+  "boundary": [
+    "本工具降低的是**可数的机器写作痕迹**（模板句、黑话、名词化、路标词、句段长度过于规整等），不改变文本的生成来源，也不承诺任何第三方 AIGC 检测服务的具体数值。",
+    "任何检测器都是概率模型：换一段文本、换一个版本，结果可能不同。请以你所用平台的**实际检测报告**为准。",
+    "正确用法是**先送检拿基线**（哪几处被判高），再用本工具定点处理，而不是全篇盲改。",
+    "自动改写只覆盖有确定性模板的类别；结构性改写（翻案句重排）在报告里标为 `needs_review`，请人工复核后再定稿。",
+    "学术与公文场景请遵守所在单位的 AI 使用规定；必要时如实说明工具使用情况。"
+  ]
+}]

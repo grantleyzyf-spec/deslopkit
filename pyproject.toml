@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deslopkit"
+version = "0.1.0"
+description = "Register-aware, fidelity-preserving AI-text de-slopping toolkit for Chinese and English (CLI + Python API + Agent Skill)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "deslopkit contributors" }]
+keywords = ["ai-text", "humanize", "deslop", "chinese", "english", "writing", "style", "cli", "nlp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: Chinese (Simplified)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+llm = []
+dev = ["pytest>=7.0", "pytest-cov", "ruff>=0.5"]
+
+[project.urls]
+Homepage = "https://github.com/grantleyzyf-spec/deslopkit"
+Repository = "https://github.com/grantleyzyf-spec/deslopkit"
+Issues = "https://github.com/grantleyzyf-spec/deslopkit/issues"
+Changelog = "https://github.com/grantleyzyf-spec/deslopkit/blob/main/CHANGELOG.md"
+
+[project.scripts]
+deslopkit = "deslopkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+deslopkit = ["rules/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+# UP045/UP007：项目声明 requires-python >=3.9，`X | None` 语法在 3.9 不可用，故不采用；
+# E501：行宽由 formatter 控制，不逐行卡。
+ignore = ["E501", "UP006", "UP007", "UP035", "UP045"]
+
+[tool.coverage.run]
+source = ["deslopkit"]

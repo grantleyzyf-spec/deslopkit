@@ -1,0 +1,84 @@
+name: Bug report
+description: 报告一个缺陷（崩溃、错误改写、保真护栏失效、CLI 异常等）
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量填写完整，以便我们复现。
+        ⚠️ deslopkit 只承诺**过程可复算、改动可审计、保真可验证**；
+        它**不保证**任何第三方检测器的判定结果，相关诉求请勿作为 bug 提交。
+
+  - type: input
+    id: os
+    attributes:
+      label: 操作系统 / 环境
+      description: 例如 macOS 15.6、Ubuntu 24.04、Windows 11（WSL2 / 原生）
+      placeholder: "macOS 15.6"
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Python 版本
+      placeholder: "3.11.9"
+    validations:
+      required: true
+
+  - type: input
+    id: deslopkit-version
+    attributes:
+      label: deslopkit 版本
+      description: 用 `deslopkit --version` 或 `pip show deslopkit` 获取
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现命令
+      description: 请贴出实际执行的命令，最好是可复制的一行
+      render: shell
+      placeholder: |
+        python -m deslopkit audit examples/input_zh_gongwen.txt
+    validations:
+      required: true
+
+  - type: textarea
+    id: input-snippet
+    attributes:
+      label: 输入片段（请脱敏）
+      description: 触发问题的最小文本片段。请勿粘贴真实个人信息、涉密或受版权保护的原文。
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: 期望结果与实际结果
+      description: 请分别写出「你期望发生什么」和「实际发生了什么」，包含报错或错误输出。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: llm-backend
+    attributes:
+      label: 是否启用了 LLM 后端
+      description: 核心规则引擎为零 LLM 依赖；若你启用了可选的 LLM 辅助，请注明。
+      options:
+        - 未启用（纯规则引擎，默认）
+        - 已启用（请在下方补充说明）
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充说明
+      description: 其他有助于定位问题的信息（trackback、相关规则 id 等）
+    validations:
+      required: false
