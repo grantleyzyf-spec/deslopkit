@@ -53,7 +53,7 @@ jobs:
     permissions:
       id-token: write        # 供 OIDC 换取 PyPI 短期凭据，无需保存 token
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist/
